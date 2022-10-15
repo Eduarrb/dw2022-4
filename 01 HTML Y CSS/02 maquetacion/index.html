@@ -24,18 +24,28 @@
             border: 5px solid #1abc9c; /* 1910? */
             /* text-align: center; */
             /* font-size: 25px; */
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-end;
         }
         article{
             border: 5px solid #8e44ad;
             height: 80px;
-            width: 1190px; /* +10px de los lados = 1210px */
-            display: inline-block;
+            /* width: 1190px; +10px de los lados = 1200px */
+            /* display: inline-block; */
+            /* display: inline; */
+            /* width: calc(70% - 10px); 70% + 10px de los bordes */
+            /* width: 70%; */
+            width: calc(70% - 10px);
         }
         aside{
             border: 5px solid #3498db;
             height: 120px;
-            width: 700px; /* +10 de lados = 730px  */ 
-            display: inline-block;
+            /* width: 700px; +10 de lados = 730px   */
+            /* display: inline-block; */
+            /* width: calc(30% - 10px); 30% + 10px de los bordes */
+            /* width: 30%; */
+            width: calc(30% - 10px);
         }
         footer{
             border: 5px solid #c0392b;
@@ -45,6 +55,7 @@
     </style>
 </head>
 <body>
+    <!-- ⚡⚡ DONT REPEAT YOURSELF ⚡⚡ -->
     <header>
         HEADER
     </header>
