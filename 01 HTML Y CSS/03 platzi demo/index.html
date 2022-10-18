@@ -8,11 +8,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
-    <style>
-        body{
-            font-family: 'Lato', sans-serif;
-        }
-    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/estilos.css">
 </head>
 <body>
     <nav>
@@ -22,25 +19,47 @@
         <!-- ol -> order list -> viñetas numeradas -->
         <!-- ul>li*6>a -->
         <ul>
-            <li>
+            <!-- son identificadores -->
+            <!-- id -> es un identificador unico -->
+            <!-- class -> que se puede usar indefinidamente y de cualquier cantidad -->
+            <li class="borde-derecho">
                 <a href="#">Cursos</a>
             </li>
-            <li>
+            <li class="borde-derecho">
                 <a href="#">Blog</a>
             </li>
-            <li>
+            <li class="borde-derecho">
                 <a href="#">FAQ</a>
             </li>
-            <li>
+            <li class="borde-derecho">
                 <a href="#">Horarios</a>
             </li>
             <li>
                 <a href="#">Live</a>
             </li>
             <li>
-                <a href="#">Inicie Sesion</a>
+                <a href="#" id="sesion">Inicie Sesion</a>
             </li>
         </ul>
     </nav>
+    <section>
+        <div class="contenedor">
+            <form>
+                <input type="text" placeholder="Buscar...">
+                <button><i class="fa-solid fa-magnifying-glass"></i></button>
+            </form>
+            <article>
+                <img src="img/arquitectura.jpg" alt="Arquitectura">
+                <div>
+                    <h1>Consejos que aumentaran tu efectividad al trabajar en casa</h1>
+                    <hr>
+                    <div>
+                        <span><i class="fa-solid fa-user"></i> Eduardo Arroyo</span>
+                        <span>17 oct 2022</span>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
 </body>
 </html>

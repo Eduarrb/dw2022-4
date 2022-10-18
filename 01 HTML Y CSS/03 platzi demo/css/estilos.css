@@ -1,0 +1,69 @@
+body{
+    font-family: 'Lato', sans-serif;
+    margin: 0;
+}
+/* ⚡⚡ NAV ⚡⚡ */
+
+nav{
+    background-color: #273b47;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+nav img{
+    width: 100px;
+    /* padding: 10px; */
+}
+nav ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+nav ul li{
+    /* margin: 0 20px; */
+    /* margin: 0 20px 0 20px; */
+    /* border-right: 2px solid white; */
+}
+.borde-derecho{
+    border-right: 2px solid white;
+}
+
+nav ul li a{
+    /* color: white; */
+    /* color: rgb(255,255,255); */
+    color: #ffffff;
+    text-decoration: none;
+    padding: 0 20px 0 20px;
+    /* background-color: #9b59b6; */
+    display: inline-block;
+}
+#sesion{
+    background-color: #ff4842;
+    padding: 5px 20px;
+    border-radius: 5px;
+}
+
+/* ⚡⚡ SECTION ⚡⚡ */
+section{
+    background-color: #efefef;
+}
+.contenedor{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+section div article img{
+    width: 100%;
+}
+section div form{
+    text-align: right;
+    padding: 5px 0;
+}
+section div form button{
+    background-color: black;
+    color: white;
+    border-radius: 3px;
+}
