@@ -2,8 +2,14 @@ body{
     font-family: 'Lato', sans-serif;
     margin: 0;
 }
-/* ⚡⚡ NAV ⚡⚡ */
+/* ⚡⚡ CONSTANTES ⚡⚡ */
+.contenedor{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
 
+/* ⚡⚡ NAV ⚡⚡ */
 nav{
     background-color: #273b47;
     display: flex;
@@ -47,23 +53,68 @@ nav ul li a{
 }
 
 /* ⚡⚡ SECTION ⚡⚡ */
-section{
+.portada{
     background-color: #efefef;
 }
-.contenedor{
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
-}
-section div article img{
+
+.portada div article img{
     width: 100%;
+    display: block;
 }
-section div form{
+.portada div form{
     text-align: right;
     padding: 5px 0;
 }
-section div form button{
+.portada div form button{
     background-color: black;
     color: white;
     border-radius: 3px;
+}
+
+.portadaBox{
+    position: relative;
+}
+.portadaData{
+    position: absolute;
+    /* top, bottom, left, right */
+    /* top: 0; */
+    background-color: rgba(255,255,255,.8);
+    bottom: 20px;
+    left: 20px;
+    padding: 20px 30px;
+    width: 50%;
+}
+.portadaData h1{
+    margin: 0;
+}
+.portadaData div{
+    display: flex;
+    justify-content: space-between;
+}
+
+/* ⚡⚡ BLOG CAJA ⚡⚡ */
+.blogCaja{
+    padding: 25px 0;
+}
+.blogCaja-contenedor{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+.blogItem{
+    width: calc(100% / 3 - 20px);
+    /* width: 31.7%; */
+    /* padding: 0 15px; */
+}
+.blogItem img{
+    width: 100%;
+    display: block;
+}
+.blogItem div h2{
+    font-size: 18px;
+}
+.blogItem div div{
+    display: flex;
+    justify-content: space-between;
 }
