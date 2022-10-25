@@ -1,6 +1,23 @@
+@charset "UTF-8";
 * {
   margin: 0;
   padding: 0;
+}
+
+/* ⚡⚡ TAMAÑO POR DEFECTO DE LA FUENTE ⚡⚡  */
+/*
+    16PX = 1REM = al tamaño de la fuente base
+    rem = 30px *******************
+    10px = 1rem 
+    30px = 3rem
+    25.5px = 2.55rem
+*/
+/*
+    16px -> 100%
+    10px -> 62.5%
+*/
+html {
+  font-size: 62.5%;
 }
 
 ul {
@@ -11,6 +28,56 @@ a,
 a:link,
 a:visited {
   text-decoration: none;
+  display: inline-block;
+}
+
+img {
+  display: block;
+}
+
+/*
+font-family: 'Kaushan Script', cursive;
+font-family: 'Merriweather', serif;
+font-family: 'Montserrat', sans-serif;
+font-family: 'Roboto Slab', serif;
+*/
+/***************************************************/
+.nav {
+  background-color: #34495e;
+  padding: 2.5rem 0;
+}
+.nav__contenedor {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav__contenedor--logo {
+  color: #fec503;
+  font-size: 2.8rem;
+  font-family: "Kaushan Script", cursive;
+}
+.nav__contenedor__menu {
+  display: flex;
+}
+.nav__contenedor__menu__item--link {
+  color: white;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  font-family: "Montserrat", sans-serif;
+  padding: 1rem 1.5rem;
+  transition: all 0.3s;
+}
+.nav__contenedor__menu__item--link:hover {
+  color: #fec503;
+  transition: all 0.3s;
+}
+
+.portada {
+  background-image: url(../img/header-bg.jpg);
+  height: 100vh;
 }
 
 /*# sourceMappingURL=estilos.css.map */
