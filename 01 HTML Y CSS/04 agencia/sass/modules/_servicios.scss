@@ -1,0 +1,17 @@
+.servicios{
+    &__contenedor{
+        &__box{
+            &__item{
+                &--logo{
+                    width: 12.8rem;
+                    height: 12.8rem;
+                    background-color: #fed136;
+                    border-radius: 50%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+            }
+        }
+    }
+}
