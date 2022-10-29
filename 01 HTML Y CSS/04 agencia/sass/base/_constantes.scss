@@ -53,9 +53,19 @@ $font-roboto: 'Roboto Slab', serif;
 }
 .resumen-n2{
     font-family: $font-merri;
-    font-size: 1.6rem;
+    font-size: 1.6rem;  
     color: #6c757d;
     font-style: italic;
+}
+.titulo-n3{
+    font-family: $font-mont;
+    font-size: 2.4rem;
+}
+.resumen-n3{
+    font-family: $font-merri;
+    font-size: 1.6rem;
+    color: #6c757d;
+    line-height: 2.8rem; // el mismo valor de la fuente es igual a 0 px de interlineado
 }
 
 // MARGENES
