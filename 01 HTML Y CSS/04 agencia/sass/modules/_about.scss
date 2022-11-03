@@ -1,0 +1,31 @@
+.about{
+    &__contenedor{
+        &__timeline::before{
+            content: "";
+            width: .2rem;
+            height: 100%;
+            display: inline-block;
+            background-color: #e9ecef;
+            position: absolute;
+            /*top, bottom, left, right*/
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        &__timeline{
+            position: relative; 
+            &__item{
+                &__imgBox{
+                    width: 15rem;
+                    height: 15rem;
+                    border: 6px solid #e9ecef;
+                    border-radius: 50%;
+                    overflow: hidden;
+                    img{
+                        width: 100%;
+                        // border-radius: 50%;
+                    }
+                }
+            }
+        }
+    }
+}

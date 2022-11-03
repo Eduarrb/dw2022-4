@@ -81,6 +81,10 @@ font-family: 'Roboto Slab', serif;
   text-align: center;
 }
 
+.text-italic {
+  font-style: italic;
+}
+
 .titulo-n2 {
   font-family: "Montserrat", sans-serif;
   font-size: 4rem;
@@ -388,6 +392,31 @@ font-family: 'Roboto Slab', serif;
 }
 .portafolio__contenedor__box__item__data {
   background-color: white;
+}
+
+.about__contenedor__timeline::before {
+  content: "";
+  width: 0.2rem;
+  height: 100%;
+  display: inline-block;
+  background-color: #e9ecef;
+  position: absolute;
+  /*top, bottom, left, right*/
+  left: 50%;
+  transform: translateX(-50%);
+}
+.about__contenedor__timeline {
+  position: relative;
+}
+.about__contenedor__timeline__item__imgBox {
+  width: 15rem;
+  height: 15rem;
+  border: 6px solid #e9ecef;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.about__contenedor__timeline__item__imgBox img {
+  width: 100%;
 }
 
 /*# sourceMappingURL=estilos.css.map */
