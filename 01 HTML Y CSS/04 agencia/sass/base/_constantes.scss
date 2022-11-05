@@ -29,6 +29,8 @@ $font-roboto: 'Roboto Slab', serif;
     text-transform: uppercase;
     padding: 2rem 4rem;
     border-radius: .5rem;
+    border: none;
+    cursor: pointer;
 }
 .btn-amarillo{
     color: white;
@@ -72,6 +74,9 @@ $font-roboto: 'Roboto Slab', serif;
 }
 .bg-module{
     background-color: #eeeeee;
+}
+.text-white{
+    color: white;
 }
 // MARGENES
 .mt-1{

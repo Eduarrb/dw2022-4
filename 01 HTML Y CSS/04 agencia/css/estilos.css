@@ -60,6 +60,8 @@ font-family: 'Roboto Slab', serif;
   text-transform: uppercase;
   padding: 2rem 4rem;
   border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
 }
 
 .btn-amarillo {
@@ -112,6 +114,10 @@ font-family: 'Roboto Slab', serif;
 
 .bg-module {
   background-color: #eeeeee;
+}
+
+.text-white {
+  color: white;
 }
 
 .mt-1 {
@@ -513,6 +519,37 @@ font-family: 'Roboto Slab', serif;
 }
 .publicidad__contenedor a {
   padding: 0 2rem;
+}
+
+.contacto {
+  background-image: url(../img/map-image.png);
+  background-color: #212529;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.contacto__contenedor__form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.contacto__contenedor__form__col {
+  width: calc(50% - 1.5rem);
+}
+.contacto__contenedor__form__col--formGroup:not(:last-child) {
+  margin-bottom: 2rem;
+}
+.contacto__contenedor__form__col--formGroup input,
+.contacto__contenedor__form__col--formGroup textarea {
+  width: 100%;
+  padding: 2rem;
+  font-size: 1.6rem;
+  font-family: "Roboto Slab", serif;
+  border-radius: 0.5rem;
+  outline: 0;
+  box-sizing: border-box;
+}
+.contacto__contenedor__form--btnBox {
+  width: 100%;
 }
 
 /*# sourceMappingURL=estilos.css.map */
