@@ -70,7 +70,9 @@ $font-roboto: 'Roboto Slab', serif;
     color: #6c757d;
     line-height: 2.8rem; // el mismo valor de la fuente es igual a 0 px de interlineado
 }
-
+.bg-module{
+    background-color: #eeeeee;
+}
 // MARGENES
 .mt-1{
     margin-top: 1rem;
@@ -101,6 +103,9 @@ $font-roboto: 'Roboto Slab', serif;
 }
 .mt-10{
     margin-top: 10rem;
+}
+.mb-05{
+    margin-bottom: .5rem;
 }
 .mb-1{
     margin-bottom: 1rem;

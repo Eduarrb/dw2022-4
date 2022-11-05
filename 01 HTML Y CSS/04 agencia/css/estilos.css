@@ -110,6 +110,10 @@ font-family: 'Roboto Slab', serif;
   line-height: 2.8rem;
 }
 
+.bg-module {
+  background-color: #eeeeee;
+}
+
 .mt-1 {
   margin-top: 1rem;
 }
@@ -148,6 +152,10 @@ font-family: 'Roboto Slab', serif;
 
 .mt-10 {
   margin-top: 10rem;
+}
+
+.mb-05 {
+  margin-bottom: 0.5rem;
 }
 
 .mb-1 {
@@ -350,9 +358,6 @@ font-family: 'Roboto Slab', serif;
   font-size: 6.4rem;
 }
 
-.portafolio {
-  background-color: #eeeeee;
-}
 .portafolio__contenedor__box {
   display: flex;
   flex-wrap: wrap;
@@ -460,6 +465,54 @@ font-family: 'Roboto Slab', serif;
   font-size: 1.8rem;
   text-align: center;
   font-weight: 700;
+}
+
+.equipo__contenedor__caja {
+  display: flex;
+  justify-content: space-around;
+}
+.equipo__contenedor__caja__item__imgBox {
+  width: 22.5rem;
+  height: 22.5rem;
+  border: 6px solid #dbdddf;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.equipo__contenedor__caja__item__imgBox img {
+  width: 100%;
+}
+.equipo__contenedor__caja__item__redes {
+  text-align: center;
+}
+.equipo__contenedor__caja__item__redes a:not(:last-child) {
+  margin-right: 2rem;
+}
+.equipo__contenedor__caja__item__redes a i {
+  font-size: 1.5rem;
+  width: 4rem;
+  height: 4rem;
+  background-color: black;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.equipo__contenedor--descri {
+  font-size: 1.5rem;
+  font-family: "Merriweather", serif;
+  color: #6c757d;
+  padding: 0 15%;
+  line-height: 2.8rem;
+}
+
+.publicidad__contenedor {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.publicidad__contenedor a {
+  padding: 0 2rem;
 }
 
 /*# sourceMappingURL=estilos.css.map */
