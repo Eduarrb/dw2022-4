@@ -1,3 +1,22 @@
+/*
+    ⚡⚡ BREAKPOINTS ⚡⚡
+    em son referencia al tamaño de fuente base = 16px = 1em
+    1400PX / 16 -> 87.5em  
+    1200PX / 16->  75em
+
+    992PX / 16-> 62em
+    768PX / 16-> 48em
+    576PX / 16-> 36em
+    
+    480PX / 16-> 30em
+    320PX / 16-> 20em
+*/
+$bp-big: 87.5em;
+$bp-extraLarge: 75em;
+$bp-large: 62em;
+$bp-medium: 48em;
+$bp-small: 36em;
+
 *{
     margin: 0;
     padding: 0;
@@ -18,7 +37,7 @@
 */
 
 html{
-    font-size: 62.5%; // -> 10px como tamaño de fuente base -> 1rem
+    font-size: 62.5%; // -> 10px como tamaño de fuente base del elemento root -> 1rem
 }
 
 ul{

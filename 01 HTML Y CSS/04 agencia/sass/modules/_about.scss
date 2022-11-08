@@ -5,11 +5,15 @@
             width: .2rem;
             height: 100%;
             display: inline-block;
-            background-color: #e9ecef;
+            // background-color: #e9ecef;
+            background-color: #4d4d4d;
             position: absolute;
             /*top, bottom, left, right*/
             left: 50%;
             transform: translateX(-50%);
+            @media only screen and (max-width: $bp-medium){
+                left: 4.6rem;
+            }
         }
         &__timeline{
             position: relative; 
@@ -28,10 +32,23 @@
                         width: 100%;
                         // border-radius: 50%;
                     }
+                    @media only screen and (max-width: $bp-large){
+                        width: 10rem;
+                        height: 10rem;
+                    }
+                    @media only screen and (max-width: $bp-medium){
+                        width: 8rem;
+                        height: 8rem;
+                        left: 4.6rem;
+                    }
+                    
                 }
                 &__panel{
                     width: 33%;
                     padding-bottom: 8rem;
+                    @media only screen and (max-width: $bp-medium){
+                        width: auto;
+                    }
                     h3{
                         margin-bottom: 1rem;
                     }
@@ -43,6 +60,10 @@
                     .about__contenedor__timeline__item__panel{
                         text-align: right;
                         margin-left: 6%;
+                        @media only screen and (max-width: $bp-medium){
+                            text-align: left;
+                            margin-left: 11rem;
+                        }
                     }
                 }
                 &:nth-child(even){
@@ -51,11 +72,21 @@
                     .about__contenedor__timeline__item__panel{
                         // margin-left: auto;
                         margin-right: 6%;
+                        @media only screen and (max-width: $bp-medium){
+                            margin-left: 11rem;
+                            margin-right: 0;
+                        }
                     }
                 }
             }
             .lastItem{
                 height: 16.2rem;
+                @media only screen and (max-width: $bp-large){
+                    height: 11.2rem;
+                }
+                @media only screen and (max-width: $bp-medium){
+                    height: 9.2rem;
+                }
                 div{
                     background-color: #ffc800;
                     display: flex;
@@ -67,6 +98,13 @@
                         font-size: 1.8rem;
                         text-align: center;
                         font-weight: 700;
+                        @media only screen and (max-width: $bp-large){
+                            font-size: 1.3rem;
+                            padding: 0 1.5rem;
+                        }
+                        @media only screen and (max-width: $bp-medium){
+                            font-size: 1rem;
+                        }
                     }
                 }
             }

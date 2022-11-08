@@ -5,6 +5,11 @@
         align-items: center;
         a{
             padding: 0 2rem;
+            box-sizing: border-box;
+            width: 25%; 
+            img{
+                width: 100%;
+            }
         }
     }
 }
