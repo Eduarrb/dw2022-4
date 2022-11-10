@@ -3,12 +3,25 @@
         display: flex;
         justify-content: space-around;
         align-items: center;
+        flex-wrap: wrap;
         a{
             padding: 0 2rem;
             box-sizing: border-box;
-            width: 25%; 
+            width: 25%;
+            @media only screen and (max-width: $bp-medium){
+                width: 50%;
+                // &:nth-child(An+B){}
+            }
+            @media only screen and (max-width: $bp-small){
+                width: 100%;
+            } 
             img{
                 width: 100%;
+                @media only screen and (max-width: $bp-small){
+                    width: 60%;
+                    margin-left: auto;
+                    margin-right: auto;
+                }
             }
         }
     }
