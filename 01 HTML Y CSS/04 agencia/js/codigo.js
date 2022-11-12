@@ -1,5 +1,7 @@
 // DOM -> DOCUMENT OBJECT MODEL
 const nav = document.querySelector('.nav');
+const boton = document.querySelector('.nav__contenedor--btn');
+const menu = document.querySelector('.nav__contenedor__menu');
 // console.log(nav);
 // nav.classList.add('cambioDeNav');
 
@@ -13,3 +15,8 @@ window.addEventListener("scroll", function(){
         nav.classList.remove('cambioDeNav');
     }
 });
+
+boton.addEventListener('click', function(){
+    // console.log('hiciste click');
+    menu.classList.toggle('mostrarMenu');
+})
