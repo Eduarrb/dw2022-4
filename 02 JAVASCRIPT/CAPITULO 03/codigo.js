@@ -14,8 +14,15 @@ btnClose.addEventListener('click', function(){
 });
 
 window.addEventListener('keyup', e => {
-    console.log(e);
+    // console.log(e);
     if(e.key === 'Escape'){
+        popupCaja.classList.remove('mostrarCaja');
+    }
+});
+
+popupCaja.addEventListener('click', e => {
+    // console.log(e);
+    if(e.target.classList.contains('popup-caja')){
         popupCaja.classList.remove('mostrarCaja');
     }
 })
