@@ -64,7 +64,23 @@ const personaje = {
     },
     saltar: function(){
         console.log(`hola soy ${this.nombre} y estoy saltando`);
+    },
+    imprimirSkills: function(etiqueta){
+        let plantilla = '';
+        for(let i = 0; i < this.skills.length; i++){
+            // console.log(this.skills[i]);
+            plantilla = plantilla + `<h2>${this.skills[i]}</h2>`
+        }
+        console.log(plantilla);
+        etiqueta.innerHTML = plantilla;
+    },
+    saludar: () => {
+        console.log(`hola soy ${this}`);
     }
+
 }
 personaje.imprimirThis();
 personaje.saltar();
+let bloque = document.querySelector('#bloque');
+personaje.imprimirSkills(bloque);
+personaje.saludar();
