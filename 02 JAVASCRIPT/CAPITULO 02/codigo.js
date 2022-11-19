@@ -19,9 +19,16 @@ btn.addEventListener('click', () => {
 
 const listaTareas = document.querySelectorAll('li');
 // console.log(listaTareas);
-for(let i = 0; i < listaTareas.length; i++){
-    listaTareas[i].addEventListener('click', function(){
-        // console.log('hiciste click');
-        listaTareas[i].remove();
-    });
-}
+// for(let i = 0; i < listaTareas.length; i++){
+//     listaTareas[i].addEventListener('click', function(){
+//         // console.log('hiciste click');
+//         listaTareas[i].remove();
+//     });
+// }
+
+ul.addEventListener('click', function(evento){
+    // console.log(evento.target.tagName);
+    if(evento.target.tagName === 'LI'){
+        evento.target.remove();
+    }
+})
