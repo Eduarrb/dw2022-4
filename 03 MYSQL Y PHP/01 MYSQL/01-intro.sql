@@ -140,3 +140,31 @@ SELECT
     CONCAT(act_apellidos, ' ', act_nombres) AS actor,
     CONCAT(SUBSTRING(act_nombres, 1, 1), act_apellidos, '@dominio.com') AS correo
     FROM actores;
+
+-- ⚡⚡ GROUP BY
+
+SELECT COUNT(peli_genero) AS cantidad, peli_genero FROM peliculas GROUP BY peli_genero;
+
+-- HACER UN QUERY QUE NOS DEVUELVA LA CANTIDAD DE PELICULAS QUE SON CIENCIA FICCION
+-- CANTIDAD | GENERO
+SELECT 
+    COUNT(peli_genero) AS cantidad, 
+    peli_genero 
+FROM peliculas 
+    WHERE peli_genero = 'ciencia ficcion'
+    GROUP BY peli_genero;
+
+-- HACER UN QUERY QUE NOS DEVUELVA LA CANTIDAD DE PELICULAS QUE SON RESTRICCION PG-13
+-- CANTIDAD | RESTRICCION
+SELECT
+    COUNT(peli_restricciones) AS canti,
+    peli_restricciones
+FROM peliculas
+    WHERE peli_restricciones = 'pg-16'
+    GROUP BY peli_restricciones;
+
+-- ⚡⚡ COMODINES
+SELECT * FROM peliculas WHERE peli_nombre LIKE 'e%';
+SELECT * FROM peliculas WHERE peli_nombre LIKE '%e';
+SELECT * FROM peliculas WHERE peli_nombre LIKE '%e%';
+
