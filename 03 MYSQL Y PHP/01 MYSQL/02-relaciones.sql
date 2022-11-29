@@ -104,3 +104,16 @@ SELECT *
     WHERE a.peli_id = b.per_peli_id
         AND b.per_act_id = c.act_id
         AND a.peli_dire_id = d.dire_id
+
+-- NOMBRE PELICULA | NOMBRES Y APELLIDOS DEL DIRECTOR | NOMBRES Y APELLIDOS DEL ACTOR | PERSONAJE | LAS PELICULAS ESTEN EN ORDEN ASCENDENTE
+
+SELECT
+    a.peli_nombre,
+    CONCAT(d.dire_nombres, ' ', d.dire_apellidos) AS director,
+    CONCAT(c.act_nombres, ' ', c.act_apellidos) AS actor,
+    b.per_nombre
+    FROM peliculas a, personajes b, actores c, directores d
+    WHERE a.peli_id = b.per_peli_id
+        AND b.per_act_id = c.act_id
+        AND a.peli_dire_id = d.dire_id
+    ORDER BY a.peli_nombre
