@@ -9,10 +9,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/css/bootstrap.min.css" integrity="sha512-rt/SrQ4UNIaGfDyEXZtNcyWvQeOq0QLygHluFQcSjaGB04IxWhal71tKuzP6K8eYXYB6vJV4pHkXcmFGGQ1/0w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-    <h1 class="text-center pt-5 pb-5 bg-primary ">Bienvenidos(as) a Pelicomic</h1>
+    <h1 class="text-center pt-5 pb-5 bg-primary text-white">Bienvenidos(as) a Pelicomic</h1>
     <section class="container">
         <div class="row p-4">
-            <a href="#" class="btn btn-success">Subir Pelicula</a>
+            <a href="subir.php" class="btn btn-success">Subir Pelicula</a>
             <a href="#" class="btn btn-info ml-2">Directores</a>
         </div>
         <div class="row">
@@ -46,13 +46,13 @@
                     // echo "<br>";
                     ?>
                         <div class="col-md-3 col-sm-6 mb-4">
-                            <img src="https://www.ecartelera.com/carteles/15800/15882/005_m.jpg" alt="" width="100%">
-                            <h4 class="text-info">Spiderman: No way home</h4>
+                            <img src="<?php echo $fila['peli_img']; ?>" alt="" width="100%">
+                            <h4 class="text-info"><?php echo $fila['peli_nombre']; ?></h4>
                             <div>
-                                <strong>Director: </strong>Jon Wants
+                                <strong>Director: </strong><?php echo $fila['director']; ?>
                             </div>
                             <div>
-                                <strong>Rating: </strong> PG-16
+                                <strong>Rating: </strong><?php echo $fila['peli_restricciones']; ?>
                             </div>
                             <div class="mt-1">
                                 <a href="#" class="btn btn-success">editar</a>
