@@ -30,7 +30,7 @@
                 // sumar();
             ?>
             <?php
-                $query = "SELECT a.peli_img, a.peli_nombre, CONCAT(b.dire_nombres, ' ', b.dire_apellidos) AS director, a.peli_restricciones FROM peliculas a INNER JOIN directores b ON a.peli_dire_id = b.dire_id";
+                $query = "SELECT a.peli_id, a.peli_img, a.peli_nombre, CONCAT(b.dire_nombres, ' ', b.dire_apellidos) AS director, a.peli_restricciones FROM peliculas a INNER JOIN directores b ON a.peli_dire_id = b.dire_id";
                 $query_res = mysqli_query($conexion, $query);
                 // print_r($query_res);
                 $array1 = ['joshi', 213, false, [12, 13]];
@@ -55,7 +55,7 @@
                                 <strong>Rating: </strong><?php echo $fila['peli_restricciones']; ?>
                             </div>
                             <div class="mt-1">
-                                <a href="#" class="btn btn-success">editar</a>
+                                <a href="editar.php?id=<?php echo $fila['peli_id']; ?>" class="btn btn-success">editar</a>
                                 <a href="#" class="btn btn-danger">borrar</a>
                             </div>
                         </div>

@@ -16,27 +16,35 @@
             <a href="./" class="btn btn-success">HOME</a>
         </div>
         <div class="row justify-content-center">
-            <h4 class="text-center col-md-12">Ingresa los datos de la película</h4>
+            <h4 class="text-center col-md-12">Editar los datos de la película</h4>
+            <?php
+                $id = $_GET['id'];
+                $query = "SELECT * FROM peliculas WHERE peli_id = {$id}";
+                $query_res = mysqli_query($conexion, $query);
+                $fila = mysqli_fetch_array($query_res);
+                // print_r($fila);
+                
+            ?>
             <form method="post" class="col-md-6 mt-4 pb-5">
                 <div class="form-group">
                     <label for="peli_nombre">Nombre de la pelicula</label>
-                    <input type="text" class="form-control" name="peli_nombre" id="peli_nombre" required>
+                    <input type="text" class="form-control" name="peli_nombre" id="peli_nombre" required value="<?php echo $fila['peli_nombre']; ?>">
                 </div>
                 <div class="form-group">
                     <label for="peli_genero">Género</label>
-                    <input type="text" class="form-control" name="peli_genero" id="peli_genero" required>
+                    <input type="text" class="form-control" name="peli_genero" id="peli_genero" required value="<?php echo $fila['peli_genero']; ?>">
                 </div>
                 <div class="form-group">
                     <label for="peli_estreno">Fecha estreno</label>
-                    <input type="date" class="form-control" name="peli_estreno" id="peli_estreno" required>
+                    <input type="date" class="form-control" name="peli_estreno" id="peli_estreno" required value="<?php echo $fila['peli_estreno']; ?>">
                 </div>
                 <div class="form-group">
                     <label for="peli_restricciones">Restricciones</label>
-                    <input type="text" class="form-control" name="peli_restricciones" id="peli_restricciones" required>
+                    <input type="text" class="form-control" name="peli_restricciones" id="peli_restricciones" required value="<?php echo $fila['peli_restricciones']; ?>"> 
                 </div>
                 <div class="form-group">
                     <label for="peli_img">Imagen URL</label>
-                    <input type="text" class="form-control" name="peli_img" id="peli_img" required>
+                    <input type="text" class="form-control" name="peli_img" id="peli_img" required value="<?php echo $fila['peli_img']; ?>">
                 </div>
                 <div class="form-group">
                     <label for="peli_dire_id">Director</label>
@@ -63,18 +71,18 @@
                 </div>
             </form>
             <?php
-                if(isset($_POST['guardar'])){
-                    $peli_nombre = $_POST["peli_nombre"];
-                    $peli_genero = $_POST['peli_genero'];
-                    $peli_estreno = $_POST['peli_estreno'];
-                    $peli_restricciones = $_POST['peli_restricciones'];
-                    $peli_img = $_POST['peli_img'];
-                    $peli_dire_id = $_POST['peli_dire_id'];
+                // if(isset($_POST['guardar'])){
+                //     $peli_nombre = $_POST["peli_nombre"];
+                //     $peli_genero = $_POST['peli_genero'];
+                //     $peli_estreno = $_POST['peli_estreno'];
+                //     $peli_restricciones = $_POST['peli_restricciones'];
+                //     $peli_img = $_POST['peli_img'];
+                //     $peli_dire_id = $_POST['peli_dire_id'];
                     
-                    $query = "INSERT INTO peliculas (peli_dire_id, peli_img, peli_nombre, peli_genero, peli_estreno, peli_restricciones) VALUES ({$peli_dire_id}, '{$peli_img}', '{$peli_nombre}', '{$peli_genero}', '{$peli_estreno}', '{$peli_restricciones}')";
-                    $query_res = mysqli_query($conexion, $query);
-                    header('Location: ./');
-                }
+                //     $query = "INSERT INTO peliculas (peli_dire_id, peli_img, peli_nombre, peli_genero, peli_estreno, peli_restricciones) VALUES ({$peli_dire_id}, '{$peli_img}', '{$peli_nombre}', '{$peli_genero}', '{$peli_estreno}', '{$peli_restricciones}')";
+                //     $query_res = mysqli_query($conexion, $query);
+                //     header('Location: ./');
+                // }
             ?>
         </div>
     </section>
