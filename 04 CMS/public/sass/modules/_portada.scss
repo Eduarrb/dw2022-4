@@ -1,0 +1,33 @@
+.portada{
+    background-image: url(../img/header-bg.jpg);
+    height: 100vh; // => 100% del viewport
+    background-position: center;
+    background-size: cover;
+    &__contenedor{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        flex-direction: column;
+        &--subtitulo{
+            font-family: $font-merri;
+            font-size: 3.5rem;
+            color: white;
+            font-style: italic;
+            @media only screen and (max-width: $bp-medium){
+                font-size: 2.4rem;
+            }
+        }
+        &--titulo{
+            color: white;
+            font-family: $font-mont;
+            font-size: 7.5rem;
+            text-transform: uppercase;
+            font-weight: 700;
+            // margin-bottom: 5rem;
+            @media only screen and (max-width: $bp-medium){
+                font-size: 5.2rem;
+            }
+        }
+    }
+}

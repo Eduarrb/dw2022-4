@@ -49,40 +49,46 @@
                 <div class="form-group">
                     <label for="peli_dire_id">Director</label>
                     <select name="peli_dire_id" id="peli_dire_id" class="form-control" required>
-                        <option value="" disabled selected>Selecciona una opción</option>
-                        <!-- <option value="2">Jon Watts</option> -->
                         <?php
                             $query = "SELECT * FROM directores";
                             $query_res = mysqli_query($conexion, $query);
-                            while($fila = mysqli_fetch_array($query_res)){
-                                // echo "<option value='{$fila['dire_id']}'>{$fila['dire_nombres']} {$fila['dire_apellidos']}</option>";
-                                ?>
-                                    <option value="<?php echo $fila['dire_id']; ?>">
-                                        <?php 
-                                            echo $fila['dire_nombres'] . " " . $fila['dire_apellidos']; 
-                                        ?>
+                            while($fila_dire = mysqli_fetch_array($query_res)){
+                                $dire_id = $fila_dire['dire_id'];
+                                $director = $fila_dire['dire_nombres'] . " " . $fila_dire['dire_apellidos'];
+                                if($dire_id == $fila['peli_dire_id']){
+                                    ?>
+                                    <option value="<?php echo $dire_id; ?>" selected>
+                                        <?php echo $director; ?>
                                     </option>
-                            <?php }
+                                <?php }
+                                else {
+                                    ?>
+                                    <option value="<?php echo $dire_id; ?>">
+                                        <?php echo $director; ?>
+                                    </option>
+                                <?php }
+                            }
                         ?>
                     </select>
                 </div>
                 <div class="form-group">
-                    <input type="submit" class="btn btn-primary" value="Guardar" name="guardar">
+                    <input type="submit" class="btn btn-warning" value="Editar" name="editar">
                 </div>
             </form>
             <?php
-                // if(isset($_POST['guardar'])){
-                //     $peli_nombre = $_POST["peli_nombre"];
-                //     $peli_genero = $_POST['peli_genero'];
-                //     $peli_estreno = $_POST['peli_estreno'];
-                //     $peli_restricciones = $_POST['peli_restricciones'];
-                //     $peli_img = $_POST['peli_img'];
-                //     $peli_dire_id = $_POST['peli_dire_id'];
+                if(isset($_POST['editar'])){
+                    $peli_nombre = $_POST["peli_nombre"];
+                    $peli_genero = $_POST['peli_genero'];
+                    $peli_estreno = $_POST['peli_estreno'];
+                    $peli_restricciones = $_POST['peli_restricciones'];
+                    $peli_img = $_POST['peli_img'];
+                    $peli_dire_id = $_POST['peli_dire_id'];
                     
-                //     $query = "INSERT INTO peliculas (peli_dire_id, peli_img, peli_nombre, peli_genero, peli_estreno, peli_restricciones) VALUES ({$peli_dire_id}, '{$peli_img}', '{$peli_nombre}', '{$peli_genero}', '{$peli_estreno}', '{$peli_restricciones}')";
-                //     $query_res = mysqli_query($conexion, $query);
-                //     header('Location: ./');
-                // }
+                    $queryUpdate = "UPDATE peliculas SET peli_nombre = '{$peli_nombre}', peli_genero = '{$peli_genero}', peli_estreno = '{$peli_estreno}', peli_restricciones = '{$peli_restricciones}', peli_img = '{$peli_img}', 
+                    peli_dire_id = {$peli_dire_id} WHERE peli_id = {$id}";
+                    mysqli_query($conexion, $queryUpdate);
+                    header("Location: ./");
+                }
             ?>
         </div>
     </section>
