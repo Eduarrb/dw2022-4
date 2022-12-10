@@ -19,7 +19,7 @@
                 <div class="container-fluid">
                     <?php
                         if(isset($_GET['header'])){
-                            echo 'aqui cargare la vista del modulo header';
+                            include(VIEW_BACK . DS . "header.php");
                         }
                     ?>
                 </div>

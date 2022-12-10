@@ -9,3 +9,4 @@
     <?php include(VIEW_FRONT . DS . "publicidad.php"); ?>
     <?php include(VIEW_FRONT . DS . "contacto.php"); ?>
     <?php include(VIEW_FRONT . DS . "footer.php"); ?>
+

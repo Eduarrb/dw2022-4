@@ -21,6 +21,9 @@
             <li class="nav__contenedor__menu__item">
                 <a href="" class="nav__contenedor__menu__item--link">contacto</a>
             </li>
+            <li class="nav__contenedor__menu__item">
+                <a href="admin" class="nav__contenedor__menu__item--link">admin</a>
+            </li>
         </ul>
         <div class="nav__contenedor--btn">
             menu <i class="fa-solid fa-bars"></i>
