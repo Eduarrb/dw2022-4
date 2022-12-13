@@ -45,4 +45,15 @@
 DELIMITADOR;
         return $msj;
     }
+    function contar_filas($query){
+        return mysqli_num_rows($query);
+    }
+    function validar_contendio_tabla($tabla){
+        $query = query("SELECT * FROM {$tabla}");
+        confirm($query);
+        if(contar_filas($query) >= 1){
+            return true;
+        }
+        return false;
+    }
 ?>
