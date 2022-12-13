@@ -56,4 +56,12 @@ DELIMITADOR;
         }
         return false;
     }
+    function email_existe($email){
+        $query = query("SELECT * FROM usuarios WHERE user_email = '{$email}'");
+        confirm($query);
+        if(contar_filas($query) == 1){
+            return true;
+        }
+        return false;
+    }
 ?>

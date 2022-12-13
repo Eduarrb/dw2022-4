@@ -25,4 +25,7 @@ CREATE TABLE usuarios (
     user_token TEXT,
     user_status TINYINT DEFAULT 0 COMMENT 'status 0: usuario no activo, status 1: usuario activo',
     user_rol VARCHAR(50) NOT NULL DEFAULT 'suscriptor'
-)
+);
+
+INSERT INTO usuarios (user_nombres, user_apellidos, user_email, user_pass, user_rol) VALUES
+    ('Eduardo', 'Arroyo', 'eduardo@gmail.com', '123', 'admin')
