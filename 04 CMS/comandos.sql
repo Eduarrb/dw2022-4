@@ -28,4 +28,21 @@ CREATE TABLE usuarios (
 );
 
 INSERT INTO usuarios (user_nombres, user_apellidos, user_email, user_pass, user_rol) VALUES
-    ('Eduardo', 'Arroyo', 'eduardo@gmail.com', '123', 'admin')
+    ('Eduardo', 'Arroyo', 'eduardo@gmail.com', '123', 'admin');
+
+CREATE TABLE portafolio (
+    por_id INT UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    por_user_id INT NOT NULL,
+    por_titulo VARCHAR(50) NOT NULL,
+    por_subtitulo VARCHAR(50) NOT NULL,
+    por_imgSmall TEXT NOT NULL,
+    por_imgLarge TEXT NOT NULL,
+    por_contenido TEXT NOT NULL,
+    por_fecha DATE NOT NULL,
+    por_status VARCHAR(20) NOT NULL,
+    por_vistas INT DEFAULT 0,
+    por_delete TINYINT DEFAULT 1 COMMENT '0: desactivado, 1: activo'
+);
+
+INSERT INTO portafolio (por_user_id, por_titulo, por_subtitulo, por_imgSmall, por_imgLarge, por_contenido, por_fecha, por_status) VALUES
+    (1, 'Threads', 'Illustration', '01-thumbnail.jpg', '01-full.jpg', 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Placeat nulla eos explicabo quidem nesciunt quod ipsa laborum numquam, provident ab consectetur atque consequatur porro, molestias, alias at. Accusamus, iste voluptas!', NOW(), 'publicado');

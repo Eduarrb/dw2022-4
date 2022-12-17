@@ -2,6 +2,7 @@
     ob_start();
 
     session_start();
+    // session_destroy();
     // echo DIRECTORY_SEPARATOR;
     defined("DS") ? null : define("DS", DIRECTORY_SEPARATOR);
     // echo DS;
