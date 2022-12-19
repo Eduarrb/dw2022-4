@@ -1,7 +1,7 @@
 <?php $fila = get_header(); ?>
 <nav class="nav">
     <div class="nav__contenedor contenedor">
-        <a href="#" class="nav__contenedor--logo">
+        <a href="./" class="nav__contenedor--logo">
             <?php echo $fila["hea_logo"]; ?>
         </a>
         <ul class="nav__contenedor__menu">
