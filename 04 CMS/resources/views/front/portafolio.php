@@ -3,7 +3,8 @@
         <h2 class="titulo-n2 text-center">portafolio</h2>
         <p class="resumen-n2 text-center mt-2 mb-7">Lorem ipsum dolor sit amet consectetur.</p>
         <div class="portafolio__contenedor__box">
-            <a href="portafolio.php" class="portafolio__contenedor__box__item">
+            <?php get_portafolio_front(); ?>
+            <!-- <a href="portafolio.php" class="portafolio__contenedor__box__item">
                 <div class="portafolio__contenedor__box__item__imgBox">
                     <img src="img/portafolio/01-thumbnail.jpg" alt="">
                     <div>
@@ -74,6 +75,6 @@
                     <h3 class="titulo-n3 text-center">Threads</h3>
                     <p class="resumen-n3 text-center text-italic">Illustration</p>
                 </div>
-            </a>
+            </a> -->
         </div>
 </section>
