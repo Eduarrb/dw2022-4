@@ -21,8 +21,7 @@ boton.addEventListener("click", function () {
 });
 
 const urlSplit = window.location.href.split('/');
-const path = urlSplit[urlSplit.length - 1];
-
+const path = urlSplit[urlSplit.length - 1].split('?')[0];
 if(path === 'portafolio.php'){
     nav.classList.add("cambioDeNav");
 }

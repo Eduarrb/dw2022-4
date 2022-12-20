@@ -22,4 +22,31 @@ DELIMITADOR;
         }
     }
     // ⚡⚡ BACK
+    function get_portafolio_back(){
+        $query = query("SELECT * FROM portafolio WHERE por_status = 'publicado' AND por_delete = 1 ORDER BY por_fecha DESC");
+        confirm($query);
+        while($fila = fetch_array($query)){
+            $item = <<<DELIMITADOR
+                <tr>
+                    <td>{$fila['por_titulo']}</td>
+                    <td>
+                        <img src="../img/portafolio/{$fila['por_imgSmall']}" alt="" width="100">
+                    </td>
+                    <td style="width: 40%">
+                        {$fila['por_contenido']}
+                    </td>
+                    <td>{$fila['por_fecha']}</td>
+                    <td>{$fila['por_status']}</td>
+                    <td>{$fila['por_vistas']}</td>
+                    <td>
+                        <a href="#" class="btn btn-small btn-info">editar</a>
+                    </td>
+                    <td>
+                        <a href="#" class="btn btn-small btn-danger">borrar</a>
+                    </td>
+                </tr>
+DELIMITADOR;
+            echo $item;
+        }
+    }
 ?>

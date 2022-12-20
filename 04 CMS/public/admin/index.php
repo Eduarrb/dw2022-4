@@ -21,6 +21,9 @@
                         if(isset($_GET['header'])){
                             include(VIEW_BACK . DS . "header.php");
                         }
+                        if(isset($_GET['portafolio'])){
+                            include(VIEW_BACK . DS . "portafolio.php");
+                        }
                     ?>
                 </div>
                 <!-- /.container-fluid -->
