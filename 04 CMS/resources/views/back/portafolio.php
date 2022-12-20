@@ -5,7 +5,7 @@
     <div class="col-md-12">
         <div class="card shadow mb-3">
             <div class="card-body">
-                <a href="" class="btn btn-primary">Agregar Item</a>
+                <a href="index.php?portafolio_add" class="btn btn-primary"><i class="fas fa-plus"></i> Agregar Item</a>
             </div>
         </div>
         <div class="card shadow">
@@ -26,24 +26,6 @@
                     </thead>
                     <tbody>
                         <?php get_portafolio_back(); ?>
-                        <!-- <tr>
-                            <td>Titulo</td>
-                            <td>
-                                <img src="../img/portafolio/01-thumbnail.jpg" alt="" width="100">
-                            </td>
-                            <td style="width: 40%">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores dolorem, facere enim recusandae reiciendis soluta fugiat architecto voluptatum odit ut.
-                            </td>
-                            <td>2022-12-19</td>
-                            <td>publicado</td>
-                            <td>1789</td>
-                            <td>
-                                <a href="#" class="btn btn-small btn-info">editar</a>
-                            </td>
-                            <td>
-                                <a href="#" class="btn btn-small btn-danger">borrar</a>
-                            </td>
-                        </tr> -->
                     </tbody>
                 </table>
             </div>
