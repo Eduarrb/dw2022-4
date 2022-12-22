@@ -19,13 +19,13 @@
                         <label for="por_imgSmall">Imagen Small</label>
                         <br>
                         <img src="../img/portafolio/<?php echo $fila['por_imgSmall']; ?>" alt="" width="200" class="mb-3">
-                        <input type="file" name="img[]" id="por_imgSmall" class="form-control" required>
+                        <input type="file" name="img[]" id="por_imgSmall" class="form-control">
                     </div>
                     <div class="form-group">
                         <label for="por_imgLarge">Imagen Large</label>
                         <br>
                         <img src="../img/portafolio/<?php echo $fila['por_imgLarge']; ?>" alt="" width="200" class="mb-3">
-                        <input type="file" name="img[]" id="por_imgLarge" class="form-control" required>
+                        <input type="file" name="img[]" id="por_imgLarge" class="form-control">
                     </div>
                     <div class="form-group">
                         <label for="por_contenido">Contenido</label>
@@ -34,16 +34,15 @@
                     <div class="form-group">
                         <label for="por_status">Estado</label>
                         <select name="por_status" id="por_status" class="form-control" required>
-                            <option value="" disabled selected>Seleccione un estado</option>
-                            <option value="publicado">publicado</option>
-                            <option value="pendiente">pendiente</option>
+                            <option value="<?php echo $fila['por_status']; ?>" selected><?php echo $fila['por_status']; ?></option>
+                            <?php get_statusItem($fila['por_status']); ?>
                         </select>
                     </div>
                     <div class="form-group">
-                        <input type="submit" value="Guardar" name="guardar" class="btn btn-success">
+                        <input type="submit" value="Editar" name="editar" class="btn btn-info">
                     </div>
                 </form>
-                <?php ?>
+                <?php post_portafolio_edit($fila['por_id'], $fila['por_imgSmall'], $fila['por_imgLarge']); ?>
             </div>
         </div>
     </div>

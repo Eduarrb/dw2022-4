@@ -27,13 +27,23 @@ DELIMITADOR;
             $id = limpiar_string(trim($_GET["{$urlParam}"]));
             $query = query("SELECT * FROM portafolio WHERE por_id = {$id} AND por_user_id = {$_SESSION['user_id']}");
             confirm($query);
-            return $fila = fetch_array($query);
+            return fetch_array($query);
         }
     }
 
     // ⚡⚡ BACK
-    function get_portafolio_back(){
-        $query = query("SELECT * FROM portafolio WHERE por_status = 'publicado' AND por_delete = 1 ORDER BY por_id DESC");
+    function get_statusItem($status){
+        if($status == "publicado"){
+            ?>
+                <option value="pendiente">pendiente</option>
+        <?php }
+        else {
+            ?>
+                <option value="publicado">publicado</option>
+        <?php }
+    }
+    function get_portafolio_back($status){
+        $query = query("SELECT * FROM portafolio WHERE por_status = '{$status}' AND por_delete = 1 ORDER BY por_id DESC");
         confirm($query);
         while($fila = fetch_array($query)){
             $item = <<<DELIMITADOR
@@ -77,6 +87,34 @@ DELIMITADOR;
             confirm($query);
             set_mensaje(display_msj("Item agregado correctamente", "success"));
             redirect("index.php?portafolio");
+        }
+    }
+    function post_portafolio_edit($id, $imgSmall, $imgLarge){
+        if(isset($_POST['editar'])){
+            $por_titulo = limpiar_string(trim($_POST['por_titulo']));
+            $por_subtitulo = limpiar_string(trim($_POST['por_subtitulo']));
+            $por_contenido = limpiar_string(trim($_POST['por_contenido']));
+            $por_status = limpiar_string(trim($_POST['por_status']));
+
+            $arrayImgsNombres = [];
+            $imgGuardadas = [$imgSmall, $imgLarge];
+            // print_r($imgGuardadas);
+            for($i = 0; $i < 2; $i++){
+                // echo $_FILES['img']['name'][$i];
+                if($_FILES['img']['name'][$i] != ''){
+                    $arrayImgsNombres[$i] = md5(uniqid()) . "." . explode(".", $_FILES['img']['name'][$i])[1];
+                    move_uploaded_file($_FILES['img']['tmp_name'][$i], "../img/portafolio/{$arrayImgsNombres[$i]}");
+                    $imgLocation = "../img/portafolio/{$imgGuardadas[$i]}";
+                    unlink($imgLocation);
+                } else {
+                    $arrayImgsNombres[$i] = $imgGuardadas[$i];
+                }
+            }
+            // print_r($arrayImgsNombres);
+            $query = query("UPDATE portafolio SET por_titulo = '{$por_titulo}', por_subtitulo = '{$por_subtitulo}', por_imgSmall = '{$arrayImgsNombres[0]}', por_imgLarge = '{$arrayImgsNombres[1]}', por_contenido = '{$por_contenido}', por_status = '{$por_status}' WHERE por_id = {$id}");
+            confirm($query);
+            set_mensaje(display_msj("Item editado correctamente", "success"));
+            redirect("index.php?portafolio_edit={$id}");
         }
     }
 ?>

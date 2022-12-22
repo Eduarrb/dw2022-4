@@ -24,6 +24,9 @@
                         if(isset($_GET['portafolio'])){
                             include(VIEW_BACK . DS . "portafolio.php");
                         }
+                        if(isset($_GET['portafolio_pendiente'])){
+                            include(VIEW_BACK . DS . "portafolio_pendiente.php");
+                        }
                         if(isset($_GET['portafolio_add'])){
                             include(VIEW_BACK . DS . "portafolio_add.php");
                         }

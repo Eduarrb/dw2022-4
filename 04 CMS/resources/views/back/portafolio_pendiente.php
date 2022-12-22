@@ -6,7 +6,7 @@
         <div class="card shadow mb-3">
             <div class="card-body">
                 <a href="index.php?portafolio_add" class="btn btn-primary"><i class="fas fa-plus"></i> Agregar Item</a>
-                <a href="index.php?portafolio_pendiente" class="btn btn-success">Items pendientes</a>
+                <a href="index.php?portafolio" class="btn btn-success">Regresar</a>
             </div>
         </div>
         <?php mostrar_msj(); ?>
@@ -27,7 +27,7 @@
                         <th>Vistas</th>
                     </thead>
                     <tbody>
-                        <?php get_portafolio_back('publicado'); ?>
+                        <?php get_portafolio_back('pendiente'); ?>
                     </tbody>
                 </table>
             </div>

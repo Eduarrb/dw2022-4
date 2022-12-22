@@ -64,5 +64,4 @@ DELIMITADOR;
         }
         return false;
     }
-    
 ?>
