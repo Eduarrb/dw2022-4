@@ -8,6 +8,7 @@
                 <a href="index.php?portafolio_add" class="btn btn-primary"><i class="fas fa-plus"></i> Agregar Item</a>
             </div>
         </div>
+        <?php mostrar_msj(); ?>
         <div class="card shadow">
             <div class="card-header">
                 <h6 class="text-primary mb-0">

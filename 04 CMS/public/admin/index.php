@@ -27,6 +27,9 @@
                         if(isset($_GET['portafolio_add'])){
                             include(VIEW_BACK . DS . "portafolio_add.php");
                         }
+                        if(isset($_GET['portafolio_edit'])){
+                            include(VIEW_BACK . DS . "portafolio_edit.php");
+                        }
                     ?>
                 </div>
                 <!-- /.container-fluid -->

@@ -1,7 +1,7 @@
 <?php
     // ⚡⚡ FRONT
     function get_portafolio_front(){
-        $query = query("SELECT por_id, por_titulo, por_subtitulo, por_imgSmall FROM portafolio WHERE por_status = 'publicado' AND por_delete = 1 ORDER BY por_fecha DESC");
+        $query = query("SELECT por_id, por_titulo, por_subtitulo, por_imgSmall FROM portafolio WHERE por_status = 'publicado' AND por_delete = 1 ORDER BY por_id DESC");
         confirm($query);
         while($fila = fetch_array($query)){
             $item = <<<DELIMITADOR
@@ -21,9 +21,19 @@ DELIMITADOR;
             echo $item;
         }
     }
+    // 🔥🔥 AMBOS
+    function get_portafolio_item($urlParam){
+        if(isset($_GET["{$urlParam}"])){
+            $id = limpiar_string(trim($_GET["{$urlParam}"]));
+            $query = query("SELECT * FROM portafolio WHERE por_id = {$id} AND por_user_id = {$_SESSION['user_id']}");
+            confirm($query);
+            return $fila = fetch_array($query);
+        }
+    }
+
     // ⚡⚡ BACK
     function get_portafolio_back(){
-        $query = query("SELECT * FROM portafolio WHERE por_status = 'publicado' AND por_delete = 1 ORDER BY por_fecha DESC");
+        $query = query("SELECT * FROM portafolio WHERE por_status = 'publicado' AND por_delete = 1 ORDER BY por_id DESC");
         confirm($query);
         while($fila = fetch_array($query)){
             $item = <<<DELIMITADOR
@@ -39,7 +49,7 @@ DELIMITADOR;
                     <td>{$fila['por_status']}</td>
                     <td>{$fila['por_vistas']}</td>
                     <td>
-                        <a href="#" class="btn btn-small btn-info">editar</a>
+                        <a href="index.php?portafolio_edit={$fila['por_id']}" class="btn btn-small btn-info">editar</a>
                     </td>
                     <td>
                         <a href="#" class="btn btn-small btn-danger">borrar</a>
@@ -56,14 +66,17 @@ DELIMITADOR;
             $por_subtitulo = limpiar_string(trim($_POST['por_subtitulo']));
             $por_contenido = limpiar_string(trim($_POST['por_contenido']));
             $por_status = limpiar_string(trim($_POST['por_status']));
-
+            
             $arrayImgsNombres = [];
             for($i = 0; $i < 2; $i++){
-                // $arrayImgsNombres[$i] = $_FILES['img']['name'][$i];
                 $arrayImgsNombres[$i] = md5(uniqid()) . "." . explode(".", $_FILES['img']['name'][$i])[1];
-                move_uploaded_file($_FILES['img']['size'][$i], "../img/portafolio/{$arrayImgsNombres[$i]}");
+                move_uploaded_file($_FILES['img']['tmp_name'][$i], "../img/portafolio/{$arrayImgsNombres[$i]}");
             }
-            print_r($arrayImgsNombres);
+
+            $query = query("INSERT INTO portafolio (por_user_id, por_titulo, por_subtitulo, por_imgSmall, por_imgLarge, por_contenido, por_fecha, por_status) VALUES ({$_SESSION['user_id']}, '{$por_titulo}', '{$por_subtitulo}', '{$arrayImgsNombres[0]}', '{$arrayImgsNombres[1]}', '{$por_contenido}', NOW(), '{$por_status}')");
+            confirm($query);
+            set_mensaje(display_msj("Item agregado correctamente", "success"));
+            redirect("index.php?portafolio");
         }
     }
 ?>
