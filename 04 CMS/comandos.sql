@@ -46,3 +46,12 @@ CREATE TABLE portafolio (
 
 INSERT INTO portafolio (por_user_id, por_titulo, por_subtitulo, por_imgSmall, por_imgLarge, por_contenido, por_fecha, por_status) VALUES
     (1, 'Threads', 'Illustration', '01-thumbnail.jpg', '01-full.jpg', 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Placeat nulla eos explicabo quidem nesciunt quod ipsa laborum numquam, provident ab consectetur atque consequatur porro, molestias, alias at. Accusamus, iste voluptas!', NOW(), 'publicado');
+
+CREATE TABLE comentarios (
+    com_id INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    com_user_id INT NOT NULL,
+    com_por_id INT NOT NULL,
+    com_mensaje VARCHAR(100) NOT NULL,
+    com_fecha DATETIME NOT NULL,
+    com_status TINYINT DEFAULT 0 NOT NULL COMMENT '0: pendiente, 1: aprobado'
+)

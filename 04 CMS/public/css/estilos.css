@@ -563,7 +563,7 @@ font-family: 'Roboto Slab', serif;
 }
 .portafolioFull__contenedor__imgCol {
   width: 40%;
-  background-image: url(../img/portafolio/01-full.jpg);
+  /* background-image: url(../img/portafolio/01-full.jpg); */
   background-position: center;
   background-size: cover;
   height: 100%;

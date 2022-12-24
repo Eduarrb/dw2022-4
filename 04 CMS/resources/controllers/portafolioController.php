@@ -21,6 +21,16 @@ DELIMITADOR;
             echo $item;
         }
     }
+    function get_portafolioItem_front(){
+        if(isset($_GET['id'])){
+            $id = limpiar_string(trim($_GET['id']));
+            $query = query("UPDATE portafolio SET por_vistas = por_vistas + 1 WHERE por_id = {$id}");
+            confirm($query);
+            $query = query("SELECT * FROM portafolio a INNER JOIN usuarios b ON a.por_user_id = b.user_id WHERE por_id = {$id}");
+            confirm($query);
+            return fetch_array($query);
+        }
+    }
     // 🔥🔥 AMBOS
     function get_portafolio_item($urlParam){
         if(isset($_GET["{$urlParam}"])){
@@ -115,6 +125,16 @@ DELIMITADOR;
             confirm($query);
             set_mensaje(display_msj("Item editado correctamente", "success"));
             redirect("index.php?portafolio_edit={$id}");
+        }
+    }
+
+    function post_deleteItem(){
+        if(isset($_GET['delete'])){
+            $id = limpiar_string(trim($_GET['delete']));
+            $query = query("UPDATE portafolio SET por_delete = 0 WHERE por_id = {$id}");
+            confirm($query);
+            set_mensaje(display_msj("Elemento Eliminado correctamente", "warning"));
+            redirect("index.php?portafolio");
         }
     }
 ?>

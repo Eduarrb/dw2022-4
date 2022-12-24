@@ -1,33 +1,36 @@
+<?php $fila = get_portafolioItem_front(); ?>
 <section class="portafolioFull">
     <div class="portafolioFull__contenedor contenedor">
-        <div class="portafolioFull__contenedor__imgCol"></div>
+        <div class="portafolioFull__contenedor__imgCol" style="background-image: url(img/portafolio/<?php echo $fila['por_imgLarge']; ?>)"></div>
         <div class="portafolioFull__contenedor__dataCol">
-            <h2 class="titulo-n2 text-center mb-1">Threads</h2>
-            <h2 class="resumen-n2 text-center">Threads</h2>
+            <h2 class="titulo-n2 text-center mb-1"><?php echo $fila['por_titulo']; ?></h2>
+            <h2 class="resumen-n2 text-center"><?php echo $fila['por_subtitulo']; ?></h2>
             <div class="portafolioFull__contenedor__dataCol__datos mt-3">
                 <div class="portafolioFull__contenedor__dataCol__datos__col">
                     <div>
-                        Publicado por <span>Eduardo Arroyo</span>
+                        Publicado por <span><?php echo $fila['user_nombres'] . " " . $fila['user_apellidos']; ?></span>
                     </div>
-                    <div>19 dic 2022</div>
+                    <div><?php echo $fila['por_fecha']; ?></div>
                 </div>
                 <div class="portafolioFull__contenedor__dataCol__datos__col">
-                    <i class="fa-regular fa-eye"></i> 1782
+                    <i class="fa-regular fa-eye"></i> <?php echo $fila['por_vistas']; ?>
                 </div>
             </div>
             <div class="portafolioFull__contenedor__dataCol__contenido mt-3">
                 <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero ea deleniti qui ipsum cum perspiciatis modi tempora optio. Iusto, recusandae fugiat! Harum, nobis nihil? Est ad nostrum rem deleniti in enim possimus debitis autem? Odio, voluptates. Fugit cum iure atque mollitia quod repellat tenetur sunt adipisci ea magni modi sit eius, aspernatur quisquam sed quae neque ad consequuntur deleniti dolorem ex. Maiores neque aliquid alias iusto atque assumenda laudantium officiis hic amet quibusdam blanditiis ad, provident nihil. Id optio illo sunt eaque sed veritatis explicabo adipisci vel nam omnis, dolorum cumque, error numquam in amet quod ad, molestiae labore modi perspiciatis nesciunt necessitatibus temporibus. Fugit ipsum et earum sed possimus adipisci corrupti reprehenderit voluptate esse fuga quia qui saepe quod dolores nemo culpa quibusdam, deserunt soluta veritatis minima ipsam nesciunt dolor in. Quia, laborum blanditiis. Tempore ex illo cum sed at aliquid dolore? Odit hic vero mollitia quia illum. Omnis!    
+                    <?php echo $fila['por_contenido']; ?>   
                 </p>
             </div>
             <div class="portafolioFull__contenedor__dataCol__form mt-3">
                 <h3 class="titulo-n3">Deja tu comentario</h3>
-                <form class="portafolioFull__contenedor__dataCol__form pt-1 pb-1">
+                <form class="portafolioFull__contenedor__dataCol__form pt-1 pb-1" method="post">
                     <div class="portafolioFull__contenedor__dataCol__form--formGroup">
-                        <textarea name="" id="" cols="30" rows="3"></textarea>
+                        <textarea name="com_mensaje" id="" cols="30" rows="3"></textarea>
                     </div>
-                    <button class="btn btn-amarillo">enviar comentario</button>
+                    <button class="btn btn-amarillo" name="enviar">enviar comentario</button>
                 </form>
+                <?php mostrar_msj(); ?>
+                <?php post_comentario($fila['por_id']); ?>
             </div>
             <div class="portafolioFull__contenedor__dataCol__comentarios mt-3">
                 <div class="portafolioFull__contenedor__dataCol__comentarios__box">

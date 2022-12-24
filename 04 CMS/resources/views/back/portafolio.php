@@ -30,6 +30,7 @@
                         <?php get_portafolio_back('publicado'); ?>
                     </tbody>
                 </table>
+                <?php post_deleteItem(); ?>
             </div>
         </div>
     </div>
