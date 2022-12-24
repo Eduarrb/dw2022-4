@@ -62,7 +62,7 @@ DELIMITADOR;
                         <a href="index.php?portafolio_edit={$fila['por_id']}" class="btn btn-small btn-info">editar</a>
                     </td>
                     <td>
-                        <a href="#" class="btn btn-small btn-danger">borrar</a>
+                        <a href="javascript:void(0)" class="btn btn-small btn-danger delete_link">borrar</a>
                     </td>
                 </tr>
 DELIMITADOR;
