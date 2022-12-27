@@ -33,7 +33,8 @@
                 <?php post_comentario($fila['por_id']); ?>
             </div>
             <div class="portafolioFull__contenedor__dataCol__comentarios mt-3">
-                <div class="portafolioFull__contenedor__dataCol__comentarios__box">
+                <?php get_comentarios($fila['por_id']); ?>
+                <!-- <div class="portafolioFull__contenedor__dataCol__comentarios__box">
                     <div class="portafolioFull__contenedor__dataCol__comentarios__box__colImg">
                         <img src="https://via.placeholder.com/50" alt="">
                     </div>
@@ -74,7 +75,7 @@
                             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolor fugit voluptatum laborum laudantium similique nesciunt, cumque deleniti earum natus ipsum distinctio, maxime odit sunt. Quia.
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>

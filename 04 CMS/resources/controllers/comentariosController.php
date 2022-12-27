@@ -13,6 +13,35 @@
             }
         }
     }
+    function get_comentarios($itemId){
+        $query = query("SELECT * FROM comentarios a INNER JOIN usuarios b ON com_user_id = b.user_id WHERE a.com_id = {$itemId} AND a.com_status = 1");
+        confirm($query);
+        while($fila = fetch_array($query)){
+            if($fila['user_img'] == ''){
+                $user_img = "https://via.placeholder.com/50";
+            } else {
+                $user_img = $fila['user_img'];
+            }
+            $usuario = $fila['user_nombres'] . " " . $fila['user_apellidos'];
+            $comentario = <<<DELIMITADOR
+                <div class="portafolioFull__contenedor__dataCol__comentarios__box">
+                    <div class="portafolioFull__contenedor__dataCol__comentarios__box__colImg">
+                        <img src="{$user_img}" alt="{$usuario}">
+                    </div>
+                    <div class="portafolioFull__contenedor__dataCol__comentarios__box__colData">
+                        <div class="portafolioFull__contenedor__dataCol__comentarios__box__colData__head">
+                            <span>{$usuario}</span>
+                            <span>{$fila['com_fecha']}</span>
+                        </div>
+                        <div class="portafolioFull__contenedor__dataCol__comentarios__box__colData--comentario mt-1">
+                            {$fila['com_mensaje']}
+                        </div>
+                    </div>
+                </div>
+DELIMITADOR;
+            echo $comentario;
+        }
+    }
     // ⚡⚡ BACK
     function get_comentariosPorEstado($status){
         $query = query("SELECT * FROM comentarios a INNER JOIN usuarios b ON a.com_user_id = b.user_id INNER JOIN portafolio c ON a.com_por_id = c.por_id WHERE a.com_status = {$status} AND c.por_user_id = {$_SESSION['user_id']}");
@@ -41,6 +70,16 @@
                 </tr>
 DELIMITADOR;
             echo $comentario;
+        }
+    }
+    function post_aprobar_desaprobar_com(){
+        if(isset($_GET['aprobar'])){
+            $status = 1;
+            post_validacionElemento($status, 'comentarios', 'com_status', 'com_id', $_GET['aprobar']);
+        }
+        if(isset($_GET['desaprobar'])){
+            $status = 2;
+            post_validacionElemento($status, 'comentarios', 'com_status', 'com_id', $_GET['desaprobar']);
         }
     }
 ?>

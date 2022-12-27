@@ -36,6 +36,12 @@
                         if(isset($_GET['comentarios'])){
                             include(VIEW_BACK . DS . "comentarios.php");
                         }
+                        if(isset($_GET['com_aprobados'])){
+                            include(VIEW_BACK . DS . "com_aprobados.php");
+                        }
+                        if(isset($_GET['com_desaprobados'])){
+                            include(VIEW_BACK . DS . "com_desaprobados.php");
+                        }
                     ?>
                 </div>
                 <!-- /.container-fluid -->
