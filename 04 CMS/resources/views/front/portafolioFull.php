@@ -25,7 +25,7 @@
                 <h3 class="titulo-n3">Deja tu comentario</h3>
                 <form class="portafolioFull__contenedor__dataCol__form pt-1 pb-1" method="post">
                     <div class="portafolioFull__contenedor__dataCol__form--formGroup">
-                        <textarea name="com_mensaje" id="" cols="30" rows="3"></textarea>
+                        <textarea name="com_mensaje" id="" cols="30" rows="3" required></textarea>
                     </div>
                     <button class="btn btn-amarillo" name="enviar">enviar comentario</button>
                 </form>

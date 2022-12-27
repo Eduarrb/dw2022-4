@@ -64,4 +64,9 @@ DELIMITADOR;
         }
         return false;
     }
+    function post_deleteElemento($param){
+        if(isset($_GET["{$param}"])){
+            echo $_GET["{$param}"];
+        }
+    }
 ?>
