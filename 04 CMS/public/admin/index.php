@@ -18,6 +18,10 @@
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
                     <?php
+                        // echo $_SERVER['REQUEST_URI'];
+                        if($_SERVER['REQUEST_URI'] == '/dw2022-4/04%20CMS/public/admin/' || $_SERVER['REQUEST_URI'] == '/dw2022-4/04%20CMS/public/admin/index.php'){
+                            include(VIEW_BACK . DS . "dashboard.php");
+                        }
                         if(isset($_GET['header'])){
                             include(VIEW_BACK . DS . "header.php");
                         }

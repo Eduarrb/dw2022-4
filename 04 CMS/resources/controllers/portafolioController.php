@@ -53,7 +53,7 @@ DELIMITADOR;
         <?php }
     }
     function get_portafolio_back($status){
-        $query = query("SELECT * FROM portafolio WHERE por_status = '{$status}' AND por_delete = 1 ORDER BY por_id DESC");
+        $query = query("SELECT * FROM portafolio WHERE por_status = '{$status}' AND por_delete = 1 AND por_user_id = {$_SESSION['user_id']} ORDER BY por_id DESC");
         confirm($query);
         while($fila = fetch_array($query)){
             $item = <<<DELIMITADOR
@@ -72,7 +72,7 @@ DELIMITADOR;
                         <a href="index.php?portafolio_edit={$fila['por_id']}" class="btn btn-small btn-info">editar</a>
                     </td>
                     <td>
-                        <a href="javascript:void(0)" class="btn btn-small btn-danger delete_link" rel="{$fila['por_id']}">borrar</a>
+                        <a href="javascript:void(0)" class="btn btn-small btn-danger delete_link" rel="{$fila['por_id']}" titulo="Eliminar Item" action="Eliminar" table="portafolio" param="delete">borrar</a>
                     </td>
                 </tr>
 DELIMITADOR;

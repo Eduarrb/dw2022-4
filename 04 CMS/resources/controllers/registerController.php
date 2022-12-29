@@ -73,7 +73,7 @@
                 $query = query("UPDATE usuarios SET user_status = 1, user_token = '' WHERE user_id = {$user_id}");
                 confirm($query);
                 set_mensaje(display_msj("Su cuenta ha sido activada satisfactoriamente. Por favor inicie sesión", 'success'));
-                redirect("register.php");
+                redirect("login.php");
             } else {
                 set_mensaje(display_msj("Los datos no son validos. Por favor intente otra vez", "danger"));
                 redirect("register.php");

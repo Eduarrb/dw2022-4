@@ -54,4 +54,9 @@ CREATE TABLE comentarios (
     com_mensaje VARCHAR(100) NOT NULL,
     com_fecha DATETIME NOT NULL,
     com_status TINYINT DEFAULT 0 NOT NULL COMMENT '0: pendiente, 1: aprobado'
-)
+);
+
+SELECT * FROM portafolio;
+SELECT SUM(por_vistas) FROM portafolio WHERE por_user_id = 1;
+
+SELECT * FROM portafolio a INNER JOIN comentarios b ON a.por_id = b.com_por_id WHERE a.por_user_id = 1
