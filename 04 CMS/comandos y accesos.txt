@@ -1,0 +1,59 @@
+⚡⚡archivo deploy⚡⚡
+****************************************************
+name: Deploy
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+
+    - name: Copy repository contents via scp
+      uses: appleboy/scp-action@master
+      env:
+        HOST: ${{ secrets.HOST }}
+        USERNAME: ${{ secrets.USERNAME }}
+        PORT: ${{ secrets.PORT }}
+        KEY: ${{ secrets.SSHKEY }}
+      with:
+        source: "."
+        target: "/var/www/mywebsite"
+
+    - name: Executing remote command
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.HOST }}
+        USERNAME: ${{ secrets.USERNAME }}
+        PORT: ${{ secrets.PORT }}
+        KEY: ${{ secrets.SSHKEY }}
+        script: ls
+**************************************************************************
+⚡⚡VIRTUAL HOST⚡⚡
+*****************************************************************************
+<VirtualHost *:80>
+	ServerName <ip o nombre de dominio>
+	ServerAlias <alias>
+	DocumentRoot /var/www/<ruta del proyecto>
+
+	DirectoryIndex index.php
+
+	<Directory />
+		Options FollowSymLinks
+		AllowOverride None
+	</Directory>
+	<Directory /var/www/<ruta del proyecto>>
+		Options Indexes FollowSymLinks MultiViews
+		AllowOverride None
+		Order allow,deny
+		allow from all
+	</Directory>
+
+	ErrorLog ${APACHE_LOG_DIR}/error.log
+	CustomLog ${APACHE_LOG_DIR}/access.log combined
+
+</VirtualHost>
+*******************************************************************************
