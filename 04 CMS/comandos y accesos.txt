@@ -57,3 +57,51 @@ jobs:
 
 </VirtualHost>
 *******************************************************************************
+
+⚡⚡ SENDGRID ⚡⚡
+function send_email($email, $asunto, $msj, $name = ''){
+        $email = $email;
+        $name = $name;
+        $body = "
+            <h3>{$asunto}</h3>
+            <br>
+            <p>{$msj}</p>
+            <br>
+        ";
+        $headers = array(
+            'Authorization: Bearer <TU TOKEN>',
+            'Content-Type: application/json'
+        );
+        $data = array(
+            "personalizations" => array(
+                array(
+                    "to" => array(
+                        array(
+                            "email" => $email,
+                            "name" => $name
+                        )
+                    )
+                )
+            ),
+            "from" => array(
+                "email" => "noreply@<tu dominio>>"
+            ),
+            "subject" => $asunto,
+            "content" => array(
+                array(
+                    "type" => "text/html",
+                    "value" => $body
+                )
+            )
+        );
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, "https://api.sendgrid.com/v3/mail/send");
+        curl_setopt($ch, CURLOPT_POST, 1);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
+        curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        $response = curl_exec($ch);
+        curl_close($ch);
+        echo $response;
+    }
